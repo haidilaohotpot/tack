@@ -1,0 +1,15 @@
+
+server:
+  port: 8080
+spring:
+  freemarker:
+    allow-request-override: true
+    cache: false
+    charset: UTF-8
+    expose-request-attributes: true
+    suffix: .html
+  profiles:
+    active: manager
+  jackson:
+      time-zone: GMT+8
+      date-format: yyyy-MM-dd HH:mm:ss

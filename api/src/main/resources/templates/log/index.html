@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="SpringBoot,Vue,博客,分享">
+    <meta name="description" content="一个多人博客平台，在这里你可以记录、分享自己的工作感悟和生活心得">
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <title>日志</title>
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+</head>
+
+<body style="background-color: rgb(245, 245, 245);">
+<div id="app">
+    <div id="home">
+        <section class="el-container">
+            <!-- header -->
+            <header class="el-header me-area" style="height: 60px;">
+                <div class="me-header el-row">
+                    <div class="me-header-left el-col el-col-2 el-col-offset-2">
+                        <a href="#" class="me-title router-link-exact-active router-link-active">
+                            <img src="/image/logo.png"></a>
+                    </div>
+                    <div class="el-col el-col-12 el-col-offset-0">
+                        <ul role="menubar" class="el-menu--horizontal el-menu">
+                            <li role="menuitem" tabindex="0" class="el-menu-item is-active" style="border-bottom-color: transparent;" onclick="window.location.href='/view/article/index'">首页</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;"onclick="window.location.href='/view/category/index'">文章分类</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;" onclick="window.location.href='/view/tag/index'">标签</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;" onclick="window.location.href='/view/article/archive'">文章归档</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: rgb(95, 184, 120); color: rgb(95, 184, 120);">日志</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;" onclick="window.location.href='/view/board/index'">留言板</li>
+                            <div class="el-col el-col-2 el-col-offset-1" tabindex="0">
+                                <li role="menuitem" tabindex="-1" class="el-menu-item" style="border-bottom-color: transparent;">
+                                    <i class="el-icon-edit"></i>社区
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </header>
+            <div data-v-68397efe="" data-title="日志 - For Fun" class="me-container">
+                <section data-v-68397efe="" class="el-container me-area">
+                    <main data-v-68397efe="" class="el-main me-main" id="log_context">
+
+
+                    </main>
+                </section>
+            </div>
+            <#include "../common/footer.html">
+        </section>
+    </div>
+    <div class="me-to-top" style="display: none;">
+        <i class="el-icon-caret-top"></i>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/article/index.js"></script>
+<script type="text/javascript" src="/js/log/index.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+</html>

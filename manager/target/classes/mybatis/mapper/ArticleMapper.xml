@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.mju.manager.mapper.ArticleMapper">
+
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="cn.edu.mju.common.entity.Article" id="articleMap">
+        <result property="categoryId" column="category_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="userLink" column="user_link"/>
+        <result property="title" column="title"/>
+        <result property="summary" column="summary"/>
+        <result property="content" column="content"/>
+        <result property="contentHtml" column="content_html"/>
+        <result property="viewNum" column="view_num"/>
+        <result property="weight" column="weight"/>
+        <result property="tags" column="tags"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <select id="queryArticleArchives" parameterType="Integer" resultType="cn.edu.mju.common.dto.ArticleArchivesDTO">
+        select year(create_time) as year,month(create_time) as month,count(*) as count from t_article
+        group by year(create_time),month(create_time)
+        limit 0,#{limit}
+    </select>
+
+
+</mapper>

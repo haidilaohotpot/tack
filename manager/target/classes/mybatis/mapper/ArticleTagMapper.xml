@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.mju.manager.mapper.ArticleTagMapper">
+
+
+    <resultMap type="cn.edu.mju.manager.mapper.ArticleTagMapper" id="articleTagMap">
+        <result property="id" column="id"/>
+        <result property="articleId" column="article_id" />
+        <result property="tagId" column="tag_id"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <!-- 查询热门标签 -->
+    <select id="queryHotTagIds" parameterType="Integer" resultType="Integer">
+        select tag_id from t_article_tag GROUP BY tag_id ORDER BY count(*) desc
+          limit 0,#{limit}
+    </select>
+
+
+    <select id="queryArticlesByTag" parameterType="cn.edu.mju.common.dto.TagPageDTO" resultType="cn.edu.mju.common.entity.Article">
+        select va.* from t_article_tag vat JOIN t_article va on va.article_id = vat.article_id
+        where vat.tag_id = #{tagId} LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="queryArticleTags" parameterType="Integer" resultType="cn.edu.mju.common.entity.Tag">
+        SELECT vt.* from t_article_tag vat INNER JOIN t_tag vt ON vat.tag_id=vt.tag_id
+        where vat.article_id=#{articleId}
+    </select>
+
+
+</mapper>

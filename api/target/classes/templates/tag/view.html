@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="SpringBoot,Vue,博客,分享">
+    <meta name="description" content="一个多人博客平台，在这里你可以记录、分享自己的工作感悟和生活心得">
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <title>Java - 标签</title>
+    <link href="/css/index.css" type="text/css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+</head>
+
+<body style="background-color: rgb(245, 245, 245);">
+<div id="app">
+    <div id="home">
+        <section class="el-container">
+            <!-- header -->
+            <#include "../common/header.html" >
+            <div data-title="Java - 标签 - For Fun" class="me-ct-body me-container">
+                <section class="el-container me-ct-container">
+                    <main class="el-main">
+                        <div class="me-ct-title me-area" id="tagArea">
+
+                        </div>
+                        <div class="me-ct-articles">
+                            <div data-v-25682a20="" data-v-cbf3ed42="" id="scroll-page" style="overflow: hidden;">
+
+
+
+
+                            </div>
+
+                            <p id="load">
+
+                            </p>
+
+                        </div>
+
+
+                    </main>
+                </section>
+            </div>
+            <#include "../common/footer.html">
+        </section>
+    </div>
+    <div class="me-to-top" style="display: none;">
+        <i class="el-icon-caret-top"></i>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/tag/tag.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        var tagId = common.getQueryVariable("tagId");
+
+        if(tagId == false){
+
+            window.location.href="/view/tag/index";
+
+        }
+
+        TagOperation.findArticlesByTagId(tagId);
+
+        TagOperation.tagDetail(tagId);
+
+    });
+
+</script>
+</html>

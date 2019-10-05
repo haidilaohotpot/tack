@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="Freemarker,SpringBoot,Mybatis-Plus,博客,分享">
+    <meta name="description" content="一个多人博客平台，在这里你可以记录、分享自己的工作感悟和生活心得">
+    <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
+    <title>Find Yourself</title>
+    <link href="/css/index.css" type="text/css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+</head>
+<body style="background-color: rgb(245, 245, 245);">
+<div id="app">
+    <div id="home">
+        <section class="el-container">
+
+            <!-- header -->
+            <header class="el-header me-area" style="height: 60px;">
+                <div class="me-header el-row">
+                    <div class="me-header-left el-col el-col-2 el-col-offset-2">
+                        <a href="#" class="me-title router-link-exact-active router-link-active">
+                            <img src="/image/logo.png"></a>
+                    </div>
+                    <div class="el-col el-col-12 el-col-offset-0">
+                        <ul role="menubar" class="el-menu--horizontal el-menu">
+                            <li role="menuitem" tabindex="0" class="el-menu-item is-active" style="border-bottom-color: rgb(95, 184, 120); color: rgb(95, 184, 120);" >首页</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;"onclick="window.location.href='/view/category/index'">文章分类</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;" onclick="window.location.href='/view/tag/index'">标签</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;" onclick="window.location.href='/view/article/archive'">文章归档</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;" onclick="window.location.href='/view/log/index'">日志</li>
+                            <li role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;" onclick="window.location.href='/view/board/index'">留言板</li>
+                            <div class="el-col el-col-2 el-col-offset-1" tabindex="0">
+                                <li role="menuitem" tabindex="-1" class="el-menu-item" style="border-bottom-color: transparent;">
+                                    <i class="el-icon-edit"></i>社区
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </header>
+            <div data-v-520a96a6="" data-title="ForFun Find Yourself" class="me-container">
+                <section data-v-520a96a6="" class="el-container">
+                    <main data-v-520a96a6="" class="el-main me-articles">
+                        <div data-v-25682a20="" data-v-cbf3ed42="" data-v-520a96a6="" id="scroll-page" style="overflow: hidden;">
+
+                            <!-- article -->
+
+
+                        </div>
+
+                        <p id="load">
+                        </p>
+
+                    </main>
+
+                    <!-- 侧边栏 -->
+                    <aside data-v-520a96a6="" class="el-aside" style="width: 300px;">
+
+                        <!-- 用户信息 -->
+                        <div data-v-f07dad4a="" data-v-520a96a6="" class="el-card me-area is-always-shadow"><!---->
+                            <div class="el-card__body"><h1 data-v-f07dad4a="" class="me-author-name">Juice</h1>
+                                <div data-v-f07dad4a="" class="me-author-description">
+                                    <span data-v-f07dad4a="">
+                                        <i data-v-f07dad4a="" class="el-icon-location-outline"></i> &nbsp;福建&amp;福州
+                                    </span>
+                                    <span data-v-f07dad4a=""><i data-v-f07dad4a="" class="me-icon-job"></i> &nbsp;Java搬砖员</span>
+                                </div>
+                                <div data-v-f07dad4a="" class="me-author-tool">
+                                    <i data-v-f07dad4a="" title="QQ" class="me-icon-QQ"></i>
+                                    <i data-v-f07dad4a="" title="gitee" class="me-icon-github"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 标签 -->
+                        <div data-v-ccb4f3bc="" data-v-520a96a6="" class="el-card is-always-shadow">
+                            <div class="el-card__header"><div data-v-ccb4f3bc="" class="me-tag-header">
+                                <span data-v-ccb4f3bc="">最热标签</span>
+                                <a data-v-ccb4f3bc="" class="me-pull-right me-tag-more" href="/view/tag/index">查看全部</a>
+                            </div></div><div class="el-card__body" style="padding: 8px 18px;">
+                            <ul data-v-ccb4f3bc="" class="me-tag-list">
+
+                                <!-- 填充 -->
+
+                            </ul>
+                        </div>
+                        </div>
+                        <div data-v-f5446920="" data-v-520a96a6="" class="el-card is-always-shadow">
+                            <div class="el-card__header"><div data-v-f5446920="" class="me-category-header">
+                                <span data-v-f5446920="">最热文章</span>
+                            </div>
+                            </div>
+                            <div class="el-card__body" style="padding: 8px 18px;">
+                                <ul data-v-f5446920="" class="me-category-list" id="hot_article">
+
+                                    <!-- 填充 -->
+
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <div data-v-275373eb="" data-v-520a96a6="" class="el-card is-always-shadow">
+                            <div class="el-card__header">
+                                <div data-v-275373eb="" class="me-category-header">
+                                    <span data-v-275373eb="">文章归档</span>
+                                </div>
+                            </div>
+                            <div class="el-card__body" style="padding: 8px 18px;">
+                                <ul data-v-275373eb="" class="me-category-list" id="article_archives">
+                                    <!-- 文章归档 -->
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div data-v-f5446920="" data-v-520a96a6="" class="el-card is-always-shadow">
+                            <div class="el-card__header">
+                                <div data-v-f5446920="" class="me-category-header">
+                                    <span data-v-f5446920="">最新文章</span>
+                                </div>
+                            </div>
+                            <div class="el-card__body" style="padding: 8px 18px;">
+                            <ul data-v-f5446920="" class="me-category-list" id="new_article">
+
+                            </ul>
+                        </div>
+                </div>
+            </aside>
+        </section>
+    </div>
+            <#include "../common/footer.html" >
+</section>
+</div>
+    <div class="me-to-top" style="display: none;"><i class="el-icon-caret-top"></i></div>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/article/index.js"></script>
+<script type="text/javascript" src="/js/tag/tag.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+
+        IndexOperation.onPageLoad();
+
+
+    });
+
+</script>
+</html>
